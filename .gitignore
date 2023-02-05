@@ -1,1 +1,7 @@
-python-ds-practice.zip python-ds-practice-solution python-ds-practice-solution.zip
+python-ds-practice.zip 
+python-ds-practice-solution 
+python-ds-practice-solution.zip
+venv/
+Figure_1.png
+__pycache__/
+ref/
