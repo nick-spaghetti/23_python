@@ -32,6 +32,10 @@
 
 # return morse_lookup.get(ltr.upper(), '')
 
+from random import randint
+import math
+
+
 def bounded_avg(nums):
     """
     returns average of list of nums (nums must be between 1-100)
@@ -48,3 +52,64 @@ def bounded_avg(nums):
         if n < 1 or n > 100:
             raise ValueError('outside bounds of 1-100')
     return sum(nums) / len(nums)
+
+
+class Triangle:
+    # right triangle
+    def __init__(self, a, b):
+        # create triangle from a + b sides
+        self.a = a
+        self.b = b
+
+    @ classmethod
+    def random(cls):
+        return cls(randint(1, 20), randint(1, 20))
+
+    def get_hypotenuse(self):
+        # get hypotenuse (length of 3rd side)
+        return math.sqrt(self.a ** 2 + self.b ** 2)
+
+    def get_area(self):
+        # get area of triangle
+        return (self.a * self.b) / 2
+
+    def describe(self):
+        return f"my area is {self.get_area()}"
+
+
+class Triangle:
+    """
+    a class used to represent a right triangle
+    attributes
+    ------------
+    a: int
+        length of side a
+    b: int
+        length of side b
+    """
+
+    def __repr__(self):
+        return f"Triangle a={self.a} b={self.b}"
+
+    def __init__(self, a, b):
+        # create triangle from a + b sides
+        self.a = a
+        self.b = b
+
+    @ classmethod
+    def random(cls):
+        "class method which returns triangle with random sides"
+        return cls(randint(1, 20), randint(1, 20))
+
+    def get_hypotenuse(self):
+        "calculates hypotenuse (3rd side of right triangle)"
+        # get hypotenuse (length of 3rd side)
+        return math.sqrt(self.a ** 2 + self.b ** 2)
+
+    def get_area(self):
+        'calculates area of right triangle'
+        # get area of triangle
+        return (self.a * self.b) / 2
+
+    def describe(self):
+        return f"my area is {self.get_area()}"
